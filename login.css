@@ -28,9 +28,11 @@ body::before {
     position: absolute;
     top: 2em;
     left: 2em;
+    border-radius: 50%;
 }
 
 .return img {
+    position: fixed;
     width: 5em;
     height: 5em;
 }
@@ -53,7 +55,7 @@ body::before {
     margin-bottom: 0.2em;
 }
 
-#forml {
+#formlogin {
     font-family: "Poiret One", sans-serif;
     font-weight: 600;
     font-size: 2em;
@@ -109,6 +111,15 @@ input:hover {
     border: 0.15em solid black;
 }
 
+#mensagemLogin {
+    color: red; /* cor do texto */
+    font-weight: bold; /* deixa o texto em negrito */
+    margin-top: 10px; /* espaço acima da mensagem */
+    margin-bottom: 0;
+    font-size: 14px; /* tamanho da fonte */
+    
+  }
+
 /* Para telas com largura de até 1200px */
 @media (max-width: 1200px) {
     .sizze {
@@ -119,7 +130,7 @@ input:hover {
         font-size: 5em;
     }
 
-    #forml {
+    #formlogin {
         font-size: 1.8em;
     }
 }
@@ -137,7 +148,7 @@ input:hover {
         font-size: 4.5em;
     }
 
-    #forml {
+    #formlogin {
         font-size: 1.6em;
     }
 
@@ -157,7 +168,7 @@ input:hover {
         font-size: 4.5em;
     }
 
-    #forml {
+    #formlogin {
         font-size: 1.6em;
     }
 
@@ -177,7 +188,7 @@ input:hover {
         font-size: 4em;
     }
 
-    #forml {
+    #formlogin {
         font-size: 1.5em;
     }
 
@@ -203,7 +214,7 @@ input:hover {
         font-size: 3em;
     }
 
-    #forml {
+    #formlogin {
         font-size: 1.4em;
     }
 
@@ -233,7 +244,7 @@ input:hover {
         font-size: 2.5em;
     }
 
-    #forml {
+    #formlogin {
         font-size: 1.2em;
     }
 

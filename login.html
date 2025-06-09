@@ -19,7 +19,7 @@
     <article class="sizze">
         <h1 class="titlle">Fazer Login</h1>
 
-        <form id="forml" action="/action_page.php" target="_blank" method="get">
+        <form id="formlogin" action="/action_page.php" target="_blank" method="get">
             <fieldset class="dados">
 
                 <label for="email">Email:</label>
@@ -30,6 +30,9 @@
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha" min="8" max="10" maxlength="10" autocomplete="off"
                     placeholder="Senha minima de 8 digitos" required />
+
+                    <p id="mensagemLogin" style="color: red;"></p>
+                    
                     <a href="newpassword.html" class="link">Esqueci minha senha</a>
 
                     <div class="conect-bg"><img src="images/conectar.png" alt="tomada" class="conectar"></div>
@@ -39,10 +42,10 @@
                 <input type="submit" class="btn" value="Enviar">
                 <input type="reset" class="btn" value="Apagar">
 
-                
             </fieldset>
         </form>
     </article>
+    <script src="login.js"></script>
 </body>
 
 </html>

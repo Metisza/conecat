@@ -29,9 +29,11 @@ body::before {
     position: absolute;
     top: 2em;
     left: 2em;
+    border-radius: 50%;
 }
 
 .return img {
+    position: fixed;
     width: 5em;
     height: 5em;
 }
@@ -47,15 +49,17 @@ body::before {
     margin: 2em;
 }
 
+.titlle, #formcadastro {
+    font-family: "Poiret One", sans-serif;
+}
+
 .titlle {
     font-size: 7em;
-    font-family: "Poiret One", sans-serif;
     text-transform: uppercase;
     margin-bottom: 0.2em;
 }
 
-#forml {
-    font-family: "Poiret One", sans-serif;
+#formcadastro {
     font-weight: 600;
     font-size: 2em;
     outline: none;
@@ -100,13 +104,22 @@ select {
 
 .buttons .btn {
     width: 15em;
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 input:hover,
 select:hover {
     border: 0.15em solid black;
 }
+
+#mensagemErro {
+    color: red; /* cor do texto */
+    font-weight: bold; /* deixa o texto em negrito */
+    margin-top: 10px; /* espaço acima da mensagem */
+    margin-bottom: 0;
+    font-size: 14px; /* tamanho da fonte */
+    
+  }
 
 /* Para telas com largura de até 1200px */
 @media (max-width: 1200px) {
@@ -118,7 +131,7 @@ select:hover {
         font-size: 5em;
     }
 
-    #forml {
+    #formcadastro {
         font-size: 1.8em;
     }
 }
@@ -136,7 +149,7 @@ select:hover {
         font-size: 4.5em;
     }
 
-    #forml {
+    #formcadastro {
         font-size: 1.6em;
     }
 
@@ -156,7 +169,7 @@ select:hover {
         font-size: 4.5em;
     }
 
-    #forml {
+    #formcadastro {
         font-size: 1.6em;
     }
 
@@ -176,7 +189,7 @@ select:hover {
         font-size: 4em;
     }
 
-    #forml {
+    #formcadastro {
         font-size: 1.5em;
     }
 
@@ -202,7 +215,7 @@ select:hover {
         font-size: 3em;
     }
 
-    #forml {
+    #formcadastro {
         font-size: 1.4em;
     }
 
@@ -232,7 +245,7 @@ select:hover {
         font-size: 2.5em;
     }
 
-    #forml {
+    #formcadastro {
         font-size: 1.2em;
     }
 

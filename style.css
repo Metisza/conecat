@@ -3,11 +3,14 @@
     margin: 0;
 }
 
-body {
-    font-size: 62.5%;
+body, .sizze, .align-home {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body {
+    font-size: 62.5%;
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -25,17 +28,11 @@ body::before {
 }
 
 .sizze {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
 }
 
 .align-home {
-    display: flex;
-    justify-content: center;
     align-content: center;
-    align-items: center;
     flex-direction: column;
     position: relative;
 }
