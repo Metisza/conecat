@@ -12,12 +12,11 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-
 body::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("images/cats.jpg");
+    background-image: url("../images/cats.jpg");
     background-size: cover;
     background-position: bottom;
     z-index: -1;
@@ -41,78 +40,78 @@ body::before {
 /* Centralizando o artigo .sizze no centro da página */
 .sizze {
     padding: 2em;
-    width: 60em;
+    width: 50em;
     background-color: rgb(160, 159, 159);
-    border-radius: 3em;
+    border-radius: 4em;
     text-align: center;
     max-width: 60em;
     margin: 2em;
 }
 
-.titlle, #formcadastro {
-    font-family: "Poiret One", sans-serif;
-}
-
 .titlle {
     font-size: 7em;
+    font-family: "Poiret One", sans-serif;
     text-transform: uppercase;
     margin-bottom: 0.2em;
 }
 
-#formcadastro {
+#formlogin {
+    font-family: "Poiret One", sans-serif;
     font-weight: 600;
     font-size: 2em;
     outline: none;
-    background-image: url("images/cat.png");
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    background-size: 100%;
-    background-position: center;
+    width: 100%;
 }
 
 .dados {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 0.2em;
     text-transform: uppercase;
     font-weight: 1000;
-    margin: 1.5em;
-    text-align: left;
+    margin: 2em;
+    opacity: 0.85;
+    gap: 1em;
     border: none;
-    opacity: 0.75;
+    opacity: 0.85;
+    text-align: left;
 }
-
+ 
 .dados input,
 select {
     border-radius: 5em;
+    border-color: rgb(197, 197, 197);
     padding: 0.6em;
-    border-color: rgb(160, 159, 159);
 }
 
+.conect-bg {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+}
 :focus {
     background-color: rgb(53, 53, 53);
     color: aliceblue;
 }
 
-.buttons {
-    width: auto;
+.link {
+    font-size: 0.65em;
+    text-align: right;
+
+}
+
+.conectar {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    height: 5em;
+    width: 5em;
 }
 
-.buttons .btn {
-    width: 15em;
-    margin-top: 2em;
-}
-
-input:hover,
-select:hover {
+input:hover {
     border: 0.15em solid black;
 }
 
-#mensagemErro {
+#mensagemLogin {
     color: red; /* cor do texto */
     font-weight: bold; /* deixa o texto em negrito */
     margin-top: 10px; /* espaço acima da mensagem */
@@ -131,14 +130,14 @@ select:hover {
         font-size: 5em;
     }
 
-    #formcadastro {
+    #formlogin {
         font-size: 1.8em;
     }
 }
 
 @media (max-width: 1024px) {
     .sizze {
-        width: 50em;
+        width: 40em;
     }
 
     .dados {
@@ -149,7 +148,7 @@ select:hover {
         font-size: 4.5em;
     }
 
-    #formcadastro {
+    #formlogin {
         font-size: 1.6em;
     }
 
@@ -169,7 +168,7 @@ select:hover {
         font-size: 4.5em;
     }
 
-    #formcadastro {
+    #formlogin {
         font-size: 1.6em;
     }
 
@@ -189,7 +188,7 @@ select:hover {
         font-size: 4em;
     }
 
-    #formcadastro {
+    #formlogin {
         font-size: 1.5em;
     }
 
@@ -215,7 +214,7 @@ select:hover {
         font-size: 3em;
     }
 
-    #formcadastro {
+    #formlogin {
         font-size: 1.4em;
     }
 
@@ -245,7 +244,7 @@ select:hover {
         font-size: 2.5em;
     }
 
-    #formcadastro {
+    #formlogin {
         font-size: 1.2em;
     }
 

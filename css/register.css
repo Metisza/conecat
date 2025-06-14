@@ -12,6 +12,7 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+
 body::before {
     content: "";
     position: absolute;
@@ -40,78 +41,78 @@ body::before {
 /* Centralizando o artigo .sizze no centro da página */
 .sizze {
     padding: 2em;
-    width: 50em;
+    width: 60em;
     background-color: rgb(160, 159, 159);
-    border-radius: 4em;
+    border-radius: 3em;
     text-align: center;
     max-width: 60em;
     margin: 2em;
 }
 
+.titlle, #formcadastro {
+    font-family: "Poiret One", sans-serif;
+}
+
 .titlle {
     font-size: 7em;
-    font-family: "Poiret One", sans-serif;
     text-transform: uppercase;
     margin-bottom: 0.2em;
 }
 
-#formlogin {
-    font-family: "Poiret One", sans-serif;
+#formcadastro {
     font-weight: 600;
     font-size: 2em;
     outline: none;
-    width: 100%;
+    background-image: url("../images/cat.png");
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: 100%;
+    background-position: center;
 }
 
 .dados {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 0.2em;
     text-transform: uppercase;
     font-weight: 1000;
-    margin: 2em;
-    opacity: 0.85;
-    gap: 1em;
-    border: none;
-    opacity: 0.85;
+    margin: 1.5em;
     text-align: left;
+    border: none;
+    opacity: 0.75;
 }
- 
+
 .dados input,
 select {
     border-radius: 5em;
-    border-color: rgb(197, 197, 197);
     padding: 0.6em;
+    border-color: rgb(160, 159, 159);
 }
 
-.conect-bg {
-    display: flex;
-    flex-direction: center;
-    justify-content: center;
-}
 :focus {
     background-color: rgb(53, 53, 53);
     color: aliceblue;
 }
 
-.link {
-    font-size: 0.65em;
-    text-align: right;
-
-}
-
-.conectar {
+.buttons {
+    width: auto;
     display: flex;
-    justify-content: center;
-    height: 5em;
-    width: 5em;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-input:hover {
+.buttons .btn {
+    width: 15em;
+    margin-top: 2em;
+}
+
+input:hover,
+select:hover {
     border: 0.15em solid black;
 }
 
-#mensagemLogin {
+#mensagemErro {
     color: red; /* cor do texto */
     font-weight: bold; /* deixa o texto em negrito */
     margin-top: 10px; /* espaço acima da mensagem */
@@ -130,14 +131,14 @@ input:hover {
         font-size: 5em;
     }
 
-    #formlogin {
+    #formcadastro {
         font-size: 1.8em;
     }
 }
 
 @media (max-width: 1024px) {
     .sizze {
-        width: 40em;
+        width: 50em;
     }
 
     .dados {
@@ -148,7 +149,7 @@ input:hover {
         font-size: 4.5em;
     }
 
-    #formlogin {
+    #formcadastro {
         font-size: 1.6em;
     }
 
@@ -168,7 +169,7 @@ input:hover {
         font-size: 4.5em;
     }
 
-    #formlogin {
+    #formcadastro {
         font-size: 1.6em;
     }
 
@@ -188,7 +189,7 @@ input:hover {
         font-size: 4em;
     }
 
-    #formlogin {
+    #formcadastro {
         font-size: 1.5em;
     }
 
@@ -214,7 +215,7 @@ input:hover {
         font-size: 3em;
     }
 
-    #formlogin {
+    #formcadastro {
         font-size: 1.4em;
     }
 
@@ -244,7 +245,7 @@ input:hover {
         font-size: 2.5em;
     }
 
-    #formlogin {
+    #formcadastro {
         font-size: 1.2em;
     }
 
