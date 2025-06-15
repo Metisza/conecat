@@ -17,7 +17,7 @@ body::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("images/cats.jpg");
+    background-image: url("../images/cats.jpg");
     background-size: cover;
     background-position: bottom;
     z-index: -1;

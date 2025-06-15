@@ -12,9 +12,9 @@
 </head>
 
 <body>
-        <a href="../html/index.html" class="return">
-            <img src="../images/botao-de-seta-curva-para-a-esquerda.png">
-        </a>
+    <a href="../html/index.html" class="return">
+        <img src="../images/botao-de-seta-curva-para-a-esquerda.png">
+    </a>
 
     <article class="sizze">
         <h1 class="titlle">Fazer Login</h1>
@@ -23,21 +23,23 @@
             <fieldset class="dados">
 
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email" value="" autocomplete="on" placeholder="Email completo" autofocus
-                    required />
+                <input type="email" name="email" id="email" value="" autocomplete="on" placeholder="Email completo"
+                    autofocus required />
+
+                <div class="campo-senha">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha" min="8" max="10" maxlength="10" autocomplete="off"
+                        placeholder="Senha minima de 8 digitos" required />
+                    <img id="toggleSenha" src="../images/olho-aberto.png" alt="Mostrar senha">
+
+                </div>
+                <p id="mensagemLogin"></p>
+
+                <a href="newpassword.html" class="link">Esqueci minha senha</a>
+
+                <div class="conect-bg"><img src="../images/conectar.png" alt="tomada" class="conectar"></div>
 
 
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" min="8" max="10" maxlength="10" autocomplete="off"
-                    placeholder="Senha minima de 8 digitos" required />
-
-                    <p id="mensagemLogin" style="color: red;"></p>
-                    
-                    <a href="newpassword.html" class="link">Esqueci minha senha</a>
-
-                    <div class="conect-bg"><img src="../images/conectar.png" alt="tomada" class="conectar"></div>
-                    
-                    
 
                 <input type="submit" class="btn" value="Enviar">
                 <input type="reset" class="btn" value="Apagar">
@@ -46,6 +48,7 @@
         </form>
     </article>
     <script src="../js/login.js"></script>
+    <script src="../js/toggle.js"></script>
 </body>
 
 </html>

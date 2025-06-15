@@ -4,13 +4,17 @@
     box-sizing: border-box;
 }
 
+:root {
+    --border-color: rgb(197, 197, 197);
+  --focus-bg: rgb(53, 53, 53);
+} 
+
 body {
     font-size: 62.5%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
 }
 body::before {
     content: "";
@@ -40,12 +44,12 @@ body::before {
 /* Centralizando o artigo .sizze no centro da página */
 .sizze {
     padding: 2em;
-    width: 50em;
+    width: 90%;
     background-color: rgb(160, 159, 159);
     border-radius: 4em;
     text-align: center;
-    max-width: 60em;
-    margin: 2em;
+    max-width: 50em;
+    margin: 0 auto;
 }
 
 .titlle {
@@ -56,10 +60,10 @@ body::before {
 }
 
 #formlogin {
-    font-family: "Poiret One", sans-serif;
-    font-weight: 600;
     font-size: 2em;
     outline: none;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 600;
     width: 100%;
 }
 
@@ -68,36 +72,56 @@ body::before {
     justify-content: center;
     flex-direction: column;
     text-transform: uppercase;
-    font-weight: 1000;
-    margin: 2em;
     opacity: 0.85;
     gap: 1em;
     border: none;
-    opacity: 0.85;
     text-align: left;
+    padding: 0;
 }
  
-.dados input,
-select {
+.dados input {
+    height: 40px;
     border-radius: 5em;
-    border-color: rgb(197, 197, 197);
+    border-color: var(--border-color);
     padding: 0.6em;
+}
+
+/* Campo-senha: garante que o input e o olho se encaixem bem */
+.campo-senha {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.campo-senha input[type="password"],
+.campo-senha input[type="text"] {
+  width: 100%;
+  padding-right: 40px;
+}
+
+/* Olho: posiciona à direita, dentro do input */
+.campo-senha img {
+  position: absolute;
+  top: 65%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .conect-bg {
     display: flex;
-    flex-direction: center;
+    align-items: center;
     justify-content: center;
 }
-:focus {
-    background-color: rgb(53, 53, 53);
+input:focus {
+    background-color: var(--focus-bg);
     color: aliceblue;
 }
 
 .link {
     font-size: 0.65em;
     text-align: right;
-
 }
 
 .conectar {
@@ -120,44 +144,6 @@ input:hover {
     
   }
 
-/* Para telas com largura de até 1200px */
-@media (max-width: 1200px) {
-    .sizze {
-        width: 50em;
-    }
-
-    .titlle {
-        font-size: 5em;
-    }
-
-    #formlogin {
-        font-size: 1.8em;
-    }
-}
-
-@media (max-width: 1024px) {
-    .sizze {
-        width: 40em;
-    }
-
-    .dados {
-        padding: 1em;
-    }
-
-    .titlle {
-        font-size: 4.5em;
-    }
-
-    #formlogin {
-        font-size: 1.6em;
-    }
-
-    .return img {
-        width: 4em;
-        height: 4em;
-    }
-}
-
 /* Para telas com largura de até 992px */
 @media (max-width: 992px) {
     .sizze {
@@ -178,66 +164,16 @@ input:hover {
     }
 }
 
-/* Para telas com largura de até 768px */
-@media (max-width: 768px) {
-    .sizze {
-        width: 50em;
-    }
-
-    .titlle {
-        font-size: 4em;
-    }
-
-    #formlogin {
-        font-size: 1.5em;
-    }
-
-    .return img {
-        width: 3.5em;
-        height: 3.5em;
-    }
-}
-
-/* Para telas com largura de até 600px */
 @media (max-width: 600px) {
     body {
-        font-size: 50%;
+        font-size: 62.5%;
     }
 
-    .sizze {
-        width: 90%;
-        padding: 1.5em;
-        border-radius: 2em;
-    }
-
-    .titlle {
-        font-size: 3em;
-    }
-
-    #formlogin {
-        font-size: 1.4em;
-    }
-
-    .dados input,
-    select {
-        padding: 0.5em;
-    }
-
-    .return img {
-        width: 3em;
-        height: 3em;
-    }
-
-    .buttons .btn {
-        width: 12em;
-    }
-}
-
-/* Para telas com largura de até 480px */
-@media (max-width: 480px) {
     .sizze {
         width: 100%;
         padding: 1em;
+        border-radius: 2em;
+        margin: 2em;
     }
 
     .titlle {
@@ -248,7 +184,12 @@ input:hover {
         font-size: 1.2em;
     }
 
-    .buttons .btn {
-        width: 10em;
+    .dados input {
+        padding: 0.5em;
+    }
+
+    .return img {
+        width: 3em;
+        height: 3em;
     }
 }
