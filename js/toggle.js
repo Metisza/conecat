@@ -1,13 +1,18 @@
-const senhaInput = document.getElementById("senha");
-const toggleSenha = document.getElementById("toggleSenha");
+document.addEventListener("DOMContentLoaded", () => {
+  const senhaInput = document.getElementById("senha");
+  const toggleSenha = document.getElementById("toggleSenha");
 
-toggleSenha.addEventListener("click", () => {
-  const tipoAtual = senhaInput.getAttribute("type");
-  const novoTipo = tipoAtual === "password" ? "text" : "password";
-  senhaInput.setAttribute("type", novoTipo);
+  if (senhaInput && toggleSenha) {
+    toggleSenha.addEventListener("click", () => {
+      const tipoAtual = senhaInput.getAttribute("type");
 
-  // Altera a imagem do olho
-  toggleSenha.src = novoTipo === "password"
-    ? "../images/olho-aberto.png"      // 👁️ Olho aberto
-    : "../images/esconder.png"; // 🙈 Olho fechado
+      if (tipoAtual === "password") {
+        senhaInput.setAttribute("type", "text");
+        toggleSenha.setAttribute("src", "../images/esconder.png");
+      } else {
+        senhaInput.setAttribute("type", "password");
+        toggleSenha.setAttribute("src", "../images/olho-aberto.png");
+      }
+    });
+  }
 });
