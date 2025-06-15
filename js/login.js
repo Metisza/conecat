@@ -12,7 +12,7 @@ const usuarioCadastrado = {
 formlogin.addEventListener("submit", function(event) {
   event.preventDefault(); // impede o envio padrão do form
 
-  if (email.value === usuarioCadastrado.email && senha.value === usuarioCadastrado.senha) {
+  if (email.value === usuarioCadastrado.email && senhaLogin.value === usuarioCadastrado.senha) {
     mensagemLogin.style.color = "green";
     mensagemLogin.textContent = "Login bem-sucedido! Redirecionando...";
 
