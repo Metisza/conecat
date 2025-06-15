@@ -1,39 +1,41 @@
 const formCadastro = document.getElementById("formcadastro");
 const mensagemErro = document.getElementById("mensagemErro");
 
-formCadastro.addEventListener("submit", function(event) {
+formCadastro.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const nome = document.getElementById("name").value.trim();
   const dataNascimento = document.getElementById("date").value;
   const genero = document.getElementById("gen").value;
   const email = document.getElementById("email").value.trim();
-  const senha = document.getElementById("senha").value.trim();
-  const confirmaSenha = document.getElementById("confirmsenha").value.trim();
+  const senha = document.getElementById("senha").value;
+  const confirmaSenha = document.getElementById("confirmsenha").value;
 
-  // Verificar se já existe usuário cadastrado
-  if(localStorage.getItem("usuario")) {
-    mensagemErro.style.color = "red";
-    mensagemErro.textContent = "Usuário já cadastrado! Por favor, faça login.";
-    return;
-  }
-
-  // Verificar se as senhas conferem
   if (senha !== confirmaSenha) {
-    mensagemErro.style.color = "red";
     mensagemErro.textContent = "As senhas não conferem!";
-    return;
-  }
-
-  // Verificar tamanho da senha
-  if (senha.length < 8) {
     mensagemErro.style.color = "red";
-    mensagemErro.textContent = "A senha deve ter pelo menos 8 caracteres.";
     return;
   }
 
-  // Criar objeto usuário
-  const usuario = {
+  if (senha.length < 8) {
+    mensagemErro.textContent = "A senha deve ter pelo menos 8 caracteres.";
+    mensagemErro.style.color = "red";
+    return;
+  }
+
+  // Verificar se já existe algum usuário com esse e-mail
+  const usuariosSalvos = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  const emailJaExiste = usuariosSalvos.some(usuario => usuario.email === email);
+
+  if (emailJaExiste) {
+    mensagemErro.textContent = "Este e-mail já está cadastrado!";
+    mensagemErro.style.color = "red";
+    return;
+  }
+
+  // Criar novo usuário
+  const novoUsuario = {
     nome,
     dataNascimento,
     genero,
@@ -41,16 +43,13 @@ formCadastro.addEventListener("submit", function(event) {
     senha
   };
 
-  // Salvar usuário no localStorage
-  localStorage.setItem("usuario", JSON.stringify(usuario));
+  usuariosSalvos.push(novoUsuario);
+  localStorage.setItem("usuarios", JSON.stringify(usuariosSalvos));
 
-  // Mensagem de sucesso
   mensagemErro.style.color = "green";
   mensagemErro.textContent = "Cadastro realizado com sucesso! Redirecionando...";
 
-  // Redirecionar para login após 2 segundos
   setTimeout(() => {
-    window.location.href = "login.html"; // ajuste o caminho se precisar
+    window.location.href = "login.html";
   }, 2000);
 });
-

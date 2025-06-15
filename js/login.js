@@ -3,27 +3,25 @@ const emailInput = document.getElementById("email");
 const senhaInput = document.getElementById("senha");
 const mensagemLogin = document.getElementById("mensagemLogin");
 
-formlogin.addEventListener("submit", function(event) {
+formlogin.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const usuarioSalvo = localStorage.getItem("usuario");
-  if (!usuarioSalvo) {
-    mensagemLogin.style.color = "red";
-    mensagemLogin.textContent = "Nenhum usuário cadastrado. Por favor, faça o cadastro primeiro.";
-    return;
-  }
+  const usuariosSalvos = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  const usuario = JSON.parse(usuarioSalvo);
+  const usuarioEncontrado = usuariosSalvos.find(
+    usuario => usuario.email === emailInput.value && usuario.senha === senhaInput.value
+  );
 
-  if (emailInput.value === usuario.email && senhaInput.value === usuario.senha) {
+  if (usuarioEncontrado) {
     mensagemLogin.style.color = "green";
     mensagemLogin.textContent = "Login bem-sucedido! Redirecionando...";
 
     setTimeout(() => {
-      window.location.href = "pagina-principal.html"; // ajuste o caminho da página após login
+      window.location.href = "pagina-principal.html";
     }, 1500);
   } else {
     mensagemLogin.style.color = "red";
     mensagemLogin.textContent = "Email ou senha incorretos.";
   }
 });
+
