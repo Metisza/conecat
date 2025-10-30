@@ -112,14 +112,19 @@ select:hover {
     border: 0.15em solid black;
 }
 
-#mensagemErro {
-    color: red; /* cor do texto */
-    font-weight: bold; /* deixa o texto em negrito */
-    margin-top: 10px; /* espaço acima da mensagem */
+/* Mensagens de erro e sucesso */
+#mensagemErro,
+.mensagem-erro {
+    font-weight: bold;
+    margin-top: 10px;
     margin-bottom: 0;
-    font-size: 14px; /* tamanho da fonte */
-    
-  }
+    font-size: 14px;
+    text-align: center;
+}
+
+.mensagem-erro {
+    color: red;
+}
 
 /* Para telas com largura de até 1200px */
 @media (max-width: 1200px) {
