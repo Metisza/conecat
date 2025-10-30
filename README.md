@@ -10,7 +10,7 @@ Rede social construída com FastAPI (backend) e HTML/CSS/JavaScript vanilla (fro
 
 ```bash
 # Clone e entre no diretório
-git clone <url>
+git clone [<url>](https://github.com/Metisza/Conecat.git)
 cd Conecat
 
 # Suba os serviços
