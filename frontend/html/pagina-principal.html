@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/pagina-principal.css">
+    <title>ConeCat - Feed</title>
+</head>
+
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <img src="/images/cat.png" alt="Gatinho" class="logo-icon"/>
+                <h1 class="logo-text"><span>C</span>oneCat</h1>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#" class="nav-link active">Feed</a>
+                <a href="#" class="nav-link">Perfil</a>
+                <a href="#" class="nav-link">Amigos</a>
+            </nav>
+
+            <div class="user-section">
+                <span class="user-name" id="userName">Carregando...</span>
+                <button class="btn-logout" id="btnLogout">Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sidebar Esquerda -->
+        <aside class="sidebar-left">
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <img src="/images/cat.png" alt="Avatar" class="avatar-img"/>
+                </div>
+                <h3 class="profile-name" id="profileName">Usuário</h3>
+                <p class="profile-email" id="profileEmail">email@exemplo.com</p>
+            </div>
+
+            <div class="stats-card">
+                <h4>Estatísticas</h4>
+                <div class="stat-item">
+                    <span class="stat-label">Posts</span>
+                    <span class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Amigos</span>
+                    <span class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Curtidas</span>
+                    <span class="stat-value">0</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Feed Central -->
+        <section class="feed-container">
+            <!-- Criar Post -->
+            <div class="create-post-card">
+                <h3>O que você está pensando?</h3>
+                <form id="formCreatePost">
+                    <textarea
+                        id="postContent"
+                        placeholder="Compartilhe algo interessante..."
+                        rows="3"
+                        maxlength="500"
+                    ></textarea>
+                    <div class="create-post-footer">
+                        <span class="char-count" id="charCount">0/500</span>
+                        <button type="submit" class="btn-post">Publicar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Feed de Posts -->
+            <div class="feed-posts" id="feedPosts">
+                <!-- Posts serão carregados aqui dinamicamente -->
+                <div class="loading-message">Carregando posts...</div>
+            </div>
+        </section>
+
+        <!-- Sidebar Direita -->
+        <aside class="sidebar-right">
+            <div class="suggestions-card">
+                <h4>Sugestões de Amizade</h4>
+                <p class="empty-message">Nenhuma sugestão no momento</p>
+            </div>
+
+            <div class="trending-card">
+                <h4>Tendências</h4>
+                <div class="trending-item">
+                    <span class="trending-tag">#ConeCat</span>
+                    <span class="trending-count">15 posts</span>
+                </div>
+                <div class="trending-item">
+                    <span class="trending-tag">#Gatos</span>
+                    <span class="trending-count">8 posts</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="/js/pagina-principal.js"></script>
+</body>
+
+</html>
