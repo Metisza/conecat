@@ -1,1 +1,27 @@
 CLAUDE.md*
+.claude
+
+# Backend
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+.env
+.venv
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
