@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <link rel="stylesheet" type="text/css" href="/frontend/css/register.css">
     <title>Register</title>
 </head>
 
 <body>
         <a href="/" class="return">
-            <img src="/images/botao-de-seta-curva-para-a-esquerda.png" alt="Voltar para página inicial">
+            <img src="/frontend/images/botao-de-seta-curva-para-a-esquerda.png" alt="Voltar para página inicial">
         </a>
 
     <article class="sizze">
@@ -21,11 +21,12 @@
 
         <form id="formcadastro">
             <fieldset class="dados">
+                <legend>Informações de Cadastro</legend>
                 <label for="name">Nome Completo:</label>
                 <input type="text" name="name" id="name" value="" autofocus autocomplete="on" placeholder="Sem abreviações" required />
 
                 <label for="date"> Data de nascimento:</label>
-                <input type="date" name="date" id="date" value="" min="1920-01-01" max="2014-01-01" autocomplete="off" validate required/>
+                <input type="date" name="date" id="date" value="" min="1920-01-01" max="2014-01-01" autocomplete="off" required/>
 
                 <label for="gen">Gênero</label>
                 <select id="gen" name="gen" size="1">
@@ -40,10 +41,10 @@
 
 
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" min="8" max="10" maxlength="10" autocomplete="off" placeholder="Senha minima de 8 digitos"  required/>
+                <input type="password" name="senha" id="senha" min="8" max="10" maxlength="10" autocomplete="new-password" placeholder="Senha minima de 8 digitos"  required/>
 
                 <label for="confirmsenha">Confirme a senha:</label>
-                <input type="password" name="confirmsenha" id="confirmsenha" min="8" max="10" maxlength="10" autocomplete="off" placeholder="Senha minima de 8 digitos"  required/>
+                <input type="password" name="confirmsenha" id="confirmsenha" maxlength="10" autocomplete="off" placeholder="Senha minima de 8 digitos"  required/>
 
                 <p id="mensagemErro" class="mensagem-erro"></p>
                 
@@ -55,7 +56,7 @@
             </fieldset>
         </form>
     </article>
-    <script src="/js/cadastro.js"></script>
+    <script src="/frontend/js/cadastro.js"></script>
 </body>
 
 </html>
