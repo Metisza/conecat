@@ -4,7 +4,7 @@ O Conecat é uma rede social que estou desenvolvendo conforme vou progredindo no
 
 ## Como acessar
 
-https://metisza.github.io/Conecat/
+[https://metisza.github.io/Conecat/](https://metisza.github.io/Conecat/)
 
 ## 📋 Visão Geral
 
