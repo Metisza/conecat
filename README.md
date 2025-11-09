@@ -2,6 +2,10 @@
 
 O Conecat é uma rede social que estou desenvolvendo conforme vou progredindo nos meus estudos, portanto ainda está incompleta.
 
+## Como acessar
+
+https://metisza.github.io/Conecat/
+
 ## 📋 Visão Geral
 
 Rede social construída com FastAPI (backend) e HTML/CSS/JavaScript vanilla (frontend), com autenticação JWT e banco de dados SQLite/PostgreSQL.
