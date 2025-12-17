@@ -24,7 +24,7 @@ formLogin.addEventListener("submit", function (event) {
     mensagemLogin.textContent = "Login realizado com sucesso!";
 
     setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "/index.html";
     }, 1500);
   } else {
     mensagemLogin.style.color = "red";
