@@ -1,54 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/login.css">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login.css">
+  <title>Login</title>
 </head>
 
 <body>
-    <a href="/index.html" class="return">
-        <img src="/frontend/images/botao-de-seta-curva-para-a-esquerda.png" alt="Voltar para página inicial">
-    </a>
+  <a href="../../index.html" class="return">
+    <img src="../images/botao-de-seta-curva-para-a-esquerda.png" alt="Voltar para página inicial">
+  </a>
 
-    <article class="sizze">
-        <h1 class="titlle">Fazer Login</h1>
+  <article class="sizze">
+    <h1 class="titlle">Fazer Login</h1>
 
-        <form id="formlogin">
-            <fieldset class="dados">
+    <form id="formlogin">
+      <fieldset class="dados">
 
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" value="" autocomplete="on" placeholder="Email completo"
-                    autofocus required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email completo" required>
 
-                <div class="campo-senha">
-                    <label for="senha">Senha:</label>
-                    <input type="password" name="senha" id="senha" min="8" max="10" maxlength="10" autocomplete="off"
-                        placeholder="Senha minima de 8 digitos" required />
-                    <img id="toggleSenha" src="/frontend/images/olho-aberto.png" alt="Mostrar senha">
-                </div>
-                <p id="mensagemLogin"></p>
+        <div class="campo-senha">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" placeholder="Senha mínima de 8 dígitos" required>
+          <img id="toggleSenha" src="../images/olho-aberto.png" alt="Mostrar senha">
+        </div>
 
-                <a href="/newpassword" class="link">Esqueci minha senha</a>
+        <p id="mensagemLogin"></p>
 
-                <div class="conect-bg"><img src="/frontend/images/conectar.png" alt="tomada" class="conectar"></div>
+        <a href="#" class="link">Esqueci minha senha</a>
 
+        <div class="conect-bg">
+          <img src="../images/conectar.png" alt="tomada" class="conectar">
+        </div>
 
+        <input type="submit" class="btn" value="Enviar">
+        <input type="reset" class="btn" value="Apagar">
 
-                <input type="submit" class="btn" value="Enviar">
-                <input type="reset" class="btn" value="Apagar">
+      </fieldset>
+    </form>
+  </article>
 
-            </fieldset>
-        </form>
-    </article>
-    <script src="/frontend/js/login.js"></script>
-    <script src="/frontend/js/toggle.js"></script>
-
+  <script src="../js/login.js"></script>
+  <script src="../js/toggle.js"></script>
 </body>
 
 </html>
