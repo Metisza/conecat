@@ -68,7 +68,7 @@ body::before {
 }
 
 .titlle {
-
+    text-align: center;
     text-transform: uppercase;
     margin-bottom: 0.2em;
     font-size: clamp(2.5em, 6vh, 7em);
