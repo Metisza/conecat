@@ -1,6 +1,12 @@
 const formCadastro = document.getElementById("formcadastro");
 const mensagemErro = document.getElementById("mensagemErro");
 
+function mostrarMensagemCadastro(texto, tipo) {
+  mensagemErro.textContent = texto;
+  mensagemErro.className = "mensagem"; // limpa classes anteriores
+  mensagemErro.classList.add(tipo, "show");
+}
+
 formCadastro.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -9,15 +15,18 @@ formCadastro.addEventListener("submit", function (event) {
   const senha = document.getElementById("senha").value;
   const confirmaSenha = document.getElementById("confirmsenha").value;
 
+  // validação: senhas iguais
   if (senha !== confirmaSenha) {
-    mensagemErro.textContent = "As senhas não conferem.";
-    mensagemErro.style.color = "red";
+    mostrarMensagemCadastro("As senhas não conferem.", "error");
     return;
   }
 
+  // validação: tamanho mínimo da senha
   if (senha.length < 8) {
-    mensagemErro.textContent = "A senha deve ter no mínimo 8 caracteres.";
-    mensagemErro.style.color = "red";
+    mostrarMensagemCadastro(
+      "A senha deve ter no mínimo 8 caracteres.",
+      "error"
+    );
     return;
   }
 
@@ -27,8 +36,10 @@ formCadastro.addEventListener("submit", function (event) {
     const usuarioExistente = JSON.parse(usuarioSalvo);
 
     if (usuarioExistente.email === email) {
-      mensagemErro.textContent = "Este email já está cadastrado.";
-      mensagemErro.style.color = "red";
+      mostrarMensagemCadastro(
+        "Este email já está cadastrado.",
+        "error"
+      );
       return;
     }
   }
@@ -41,11 +52,9 @@ formCadastro.addEventListener("submit", function (event) {
 
   localStorage.setItem("usuario", JSON.stringify(novoUsuario));
 
-  mensagemErro.style.color = "green";
-  mensagemErro.textContent = "Cadastro realizado com sucesso!";
+  mostrarMensagemCadastro("Cadastro realizado com sucesso!", "success");
 
   setTimeout(() => {
     window.location.href = "login.html";
   }, 1500);
 });
-

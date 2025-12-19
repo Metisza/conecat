@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const senhaInput = document.getElementById("senha");
-  const toggleSenha = document.getElementById("toggleSenha");
+  const toggles = document.querySelectorAll(".toggle-senha");
 
-  if (senhaInput && toggleSenha) {
-    toggleSenha.addEventListener("click", () => {
-      const tipoAtual = senhaInput.getAttribute("type");
+  toggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const input = toggle.previousElementSibling;
+      const tipoAtual = input.getAttribute("type");
 
       if (tipoAtual === "password") {
-        senhaInput.setAttribute("type", "text");
-        toggleSenha.setAttribute("src", "../images/esconder.png");
+        input.setAttribute("type", "text");
+        toggle.setAttribute("src", "../images/esconder.png");
       } else {
-        senhaInput.setAttribute("type", "password");
-        toggleSenha.setAttribute("src", "../images/olho-aberto.png");
+        input.setAttribute("type", "password");
+        toggle.setAttribute("src", "../images/olho-aberto.png");
       }
     });
-  }
+  });
 });

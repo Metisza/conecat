@@ -116,6 +116,29 @@ select {
     color: aliceblue;
 }
 
+
+/* Campo de senha com olhinho */
+.campo-senha {
+    position: relative;
+    width: 100%;
+}
+
+.campo-senha input[type="password"],
+.campo-senha input[type="text"] {
+    width: 100%;
+    padding-right: 3em; /* espaço para o olhinho */
+}
+
+.campo-senha img.toggle-senha {
+    position: absolute;
+    right: 1em;
+    top: 65%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
 .buttons {
     width: auto;
     display: flex;
@@ -133,19 +156,36 @@ select:hover {
     border: 0.15em solid black;
 }
 
-/* Mensagens de erro e sucesso */
-#mensagemErro,
-.mensagem-erro {
+/* Mensagens de feedback (login e cadastro) */
+.mensagem {
+    margin-top: 1em;
+    padding: 0.8em 1em;
+    border-radius: 0.8em;
     font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-size: 14px;
     text-align: center;
+
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
 }
 
-.mensagem-erro {
-    color: red;
+.mensagem.show {
+    opacity: 1;
+    transform: translateY(0);
 }
+
+.mensagem.success {
+    color: #155724;
+    background-color: #d4edda;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.mensagem.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+}
+
 
 /* Para telas com largura de até 1200px */
 @media (max-width: 1200px) {

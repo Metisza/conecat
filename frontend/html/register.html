@@ -40,13 +40,43 @@
         <label for="email">Email:</label>
         <input type="email" id="email" placeholder="Email completo" required>
 
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" minlength="8" maxlength="10" placeholder="Senha mínima de 8 dígitos" required>
+        <!-- SENHA -->
+        <div class="campo-senha">
+          <label for="senha">Senha:</label>
+          <input 
+            type="password" 
+            id="senha" 
+            minlength="8" 
+            maxlength="10" 
+            placeholder="Senha mínima de 8 dígitos" 
+            required
+          >
+          <img 
+            class="toggle-senha"
+            src="../images/olho-aberto.png" 
+            alt="Mostrar senha"
+          >
+        </div>
 
-        <label for="confirmsenha">Confirme a senha:</label>
-        <input type="password" id="confirmsenha" maxlength="10" placeholder="Confirme a senha" required>
+        <!-- CONFIRMAR SENHA -->
+        <div class="campo-senha">
+          <label for="confirmsenha">Confirme a senha:</label>
+          <input 
+            type="password" 
+            id="confirmsenha" 
+            maxlength="10" 
+            placeholder="Confirme a senha" 
+            required
+          >
+          <img 
+            class="toggle-senha"
+            src="../images/olho-aberto.png" 
+            alt="Mostrar senha"
+          >
+        </div>
 
-        <p id="mensagemErro" class="mensagem-erro"></p>
+        <p id="mensagemErro" class="mensagem"></p>
+
 
         <div class="buttons">
           <input type="submit" class="btn" value="Enviar">
@@ -58,6 +88,8 @@
   </article>
 
   <script src="../js/cadastro.js"></script>
+  <script src="../js/toggle.js"></script>
 </body>
 
 </html>
+
