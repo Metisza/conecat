@@ -163,10 +163,12 @@ select:hover {
     border-radius: 0.8em;
     font-weight: bold;
     text-align: center;
+    text-transform: uppercase;
 
     opacity: 0;
     transform: translateY(-5px);
     transition: all 0.3s ease;
+    font-size: 14px; /* tamanho da fonte */
 }
 
 .mensagem.show {
