@@ -4,25 +4,35 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 body {
     font-size: 62.5%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    align-items: flex-start;
+    overflow-y: auto;
+
+    background-image: url("../images/cats.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
-    background-image: url("../images/cats.jpg");
-    background-size: cover;
-    background-position: bottom;
-    z-index: -1;
-    opacity: 0.1;
+
+    background-color: rgba(255, 255, 255, 0.85);
+    /* ajuste aqui */
+    z-index: 0;
+    pointer-events: none;
 }
+
 
 /* Estilo para o botão de retorno ao index */
 .return {
@@ -38,36 +48,42 @@ body::before {
     height: 5em;
 }
 
-/* Centralizando o artigo .sizze no centro da página */
 .sizze {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 60em;
+    margin: 6em auto 2em;
     padding: 2em;
-    width: 60em;
     background-color: rgb(160, 159, 159);
     border-radius: 3em;
-    text-align: center;
-    max-width: 60em;
-    margin: 2em;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
-.titlle, #formcadastro {
+
+.titlle,
+#formcadastro {
     font-family: "Poiret One", sans-serif;
 }
 
 .titlle {
-    font-size: 7em;
+
     text-transform: uppercase;
     margin-bottom: 0.2em;
+    font-size: clamp(2.5em, 6vh, 7em);
 }
 
 #formcadastro {
     font-weight: 600;
-    font-size: 2em;
+
     outline: none;
     background-image: url("../images/cat.png");
     background-repeat: no-repeat;
     background-clip: border-box;
     background-size: 100%;
     background-position: center;
+    font-size: clamp(1.2em, 2.5vh, 2em);
 }
 
 .dados legend {
@@ -77,16 +93,16 @@ body::before {
 
 .dados {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    gap: 0.2em;
-    text-transform: uppercase;
-    font-weight: 1000;
-    margin: 1.5em;
-    text-align: left;
-    border: none;
-    opacity: 0.75;
+    gap: 0.6em;
+
+    margin: 0;
+    padding: 1.5em;
+
+    width: 100%;
+    box-sizing: border-box;
 }
+
 
 .dados input,
 select {
@@ -133,9 +149,6 @@ select:hover {
 
 /* Para telas com largura de até 1200px */
 @media (max-width: 1200px) {
-    .sizze {
-        width: 50em;
-    }
 
     .titlle {
         font-size: 5em;
@@ -147,8 +160,9 @@ select:hover {
 }
 
 @media (max-width: 1024px) {
-    .sizze {
-        width: 50em;
+
+    body {
+        margin: 2em;
     }
 
     .dados {
@@ -171,9 +185,6 @@ select:hover {
 
 /* Para telas com largura de até 992px */
 @media (max-width: 992px) {
-    .sizze {
-        width: 40em;
-    }
 
     .titlle {
         font-size: 4.5em;
@@ -191,9 +202,6 @@ select:hover {
 
 /* Para telas com largura de até 768px */
 @media (max-width: 768px) {
-    .sizze {
-        width: 50em;
-    }
 
     .titlle {
         font-size: 4em;
@@ -215,12 +223,6 @@ select:hover {
         font-size: 50%;
     }
 
-    .sizze {
-        width: 90%;
-        padding: 1.5em;
-        border-radius: 2em;
-    }
-
     .titlle {
         font-size: 3em;
     }
@@ -238,28 +240,21 @@ select:hover {
         width: 3em;
         height: 3em;
     }
-
-    .buttons .btn {
-        width: 12em;
-    }
 }
 
-/* Para telas com largura de até 480px */
 @media (max-width: 480px) {
     .sizze {
-        width: 100%;
-        padding: 1em;
+        margin: 1em;
+        margin-top: 7em;
+        padding: 1.5em;
+        border-radius: 2em;
     }
 
-    .titlle {
-        font-size: 2.5em;
-    }
-
-    #formcadastro {
-        font-size: 1.2em;
+    .buttons {
+        gap: 0.5em;
     }
 
     .buttons .btn {
-        width: 10em;
+        width: 100%;
     }
 }
